@@ -30,9 +30,25 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func updatePreviewImage() {
-       // make sure we return if post doesn't exist
-       guard let post = post else { return }
-       // assign the placeholder image to the UI element
-       productImageView.image = UIImage(systemName: "desktopcomputer")
+        // make sure we return if post doesn't exist
+        guard let post = post else { return }
+        // assign the placeholder image to the UI element
+        downloadImage(from: post.previewImageURL)
+    }
+    
+    private func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
+    }
+    
+    private func downloadImage(from url: URL) {
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { [weak self] in
+                self?.productImageView.image = UIImage(data: data)
+            }
+        }
     }
 }
