@@ -25,9 +25,9 @@ struct PostList: Decodable {
 extension Post: Decodable {
     enum PostKeys: String, CodingKey {
         // first three match our variable names for our Post struct
-        case id
-        case name
-        case tagline
+        case id = "id"
+        case name = "name"
+        case tagline = "tagline"
         // these three need to be mapped since they're named differently on the API compared to our struct
         case votesCount = "votes_count"
         case commentsCount = "comments_count"

@@ -13,7 +13,7 @@ class NetworkManager {
     let urlSession = URLSession.shared
 
     var baseURL = "https://api.producthunt.com/v1/"
-    var token = " aYuWdZdZ2OhnCgN8Pwo6y50-_IsB3Oh1bh-QLmyYC3A"
+    var token = "aYuWdZdZ2OhnCgN8Pwo6y50-_IsB3Oh1bh-QLmyYC3A"
     
     func getPosts(completion: @escaping ([Post]) -> Void) {
         // our API query
@@ -39,10 +39,13 @@ class NetworkManager {
 
             // make sure we get back data
             guard let data = data else {
+                print("no data")
                 return
             }
             // Decode the API response into our PostList object that we can use/interact with
             guard let result = try? JSONDecoder().decode(PostList.self, from: data) else {
+                print("couldn't decode result")
+                print(data.debugDescription)
                 return
             }
             
