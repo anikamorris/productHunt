@@ -49,6 +49,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF40A21F24A6673300CBACB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CF40A20D249FEEB700CBACB4 /* Post.swift */,
+				CF40A21724A272D100CBACB4 /* Comment.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF40A22024A6675800CBACB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF40A20F249FF36B00CBACB4 /* PostTableViewCell.swift */,
+				CF40A21524A2709600CBACB4 /* CommentTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF40A22124A6677000CBACB4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFB44265249FEC25009855FC /* FeedViewController.swift */,
+				CF40A21324A26F7000CBACB4 /* CommentsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CF40A22224A6678500CBACB4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				CF40A211249FF84B00CBACB4 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		CFB44255249FEC25009855FC = {
 			isa = PBXGroup;
 			children = (
@@ -68,19 +103,16 @@
 		CFB44260249FEC25009855FC /* productHunt */ = {
 			isa = PBXGroup;
 			children = (
+				CF40A22224A6678500CBACB4 /* Managers */,
+				CF40A22124A6677000CBACB4 /* Controllers */,
+				CF40A22024A6675800CBACB4 /* Views */,
+				CF40A21F24A6673300CBACB4 /* Models */,
 				CFB44261249FEC25009855FC /* AppDelegate.swift */,
 				CFB44263249FEC25009855FC /* SceneDelegate.swift */,
-				CFB44265249FEC25009855FC /* FeedViewController.swift */,
-				CF40A20D249FEEB700CBACB4 /* Post.swift */,
-				CF40A211249FF84B00CBACB4 /* NetworkManager.swift */,
 				CFB44267249FEC25009855FC /* Main.storyboard */,
-				CF40A21324A26F7000CBACB4 /* CommentsViewController.swift */,
-				CF40A20F249FF36B00CBACB4 /* PostTableViewCell.swift */,
 				CFB4426A249FEC2F009855FC /* Assets.xcassets */,
 				CFB4426C249FEC2F009855FC /* LaunchScreen.storyboard */,
 				CFB4426F249FEC2F009855FC /* Info.plist */,
-				CF40A21524A2709600CBACB4 /* CommentTableViewCell.swift */,
-				CF40A21724A272D100CBACB4 /* Comment.swift */,
 			);
 			path = productHunt;
 			sourceTree = "<group>";
